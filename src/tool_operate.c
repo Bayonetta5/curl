@@ -990,6 +990,7 @@ static CURLcode create_transfers(struct GlobalConfig *global,
             result = CURLE_OUT_OF_MEMORY;
             goto show_error;
           }
+          per->this_url = nurl;
         }
         else if(per->uploadfile && stdin_upload(per->uploadfile)) {
           /* count to see if there are more than one auth bit set
