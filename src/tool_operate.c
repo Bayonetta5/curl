@@ -985,8 +985,8 @@ static CURLcode create_transfers(struct GlobalConfig *global,
           /*
            * We have specified a file to upload and it isn't "-".
            */
-          per->this_url = add_file_name_to_url(per->this_url, per->uploadfile);
-          if(!per->this_url) {
+          char *nurl = add_file_name_to_url(per->this_url, per->uploadfile);
+          if(!nurl) {
             result = CURLE_OUT_OF_MEMORY;
             goto show_error;
           }
